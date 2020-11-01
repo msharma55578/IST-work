@@ -1,0 +1,42 @@
+=> Backend 
+
+1.Server is listening at 8080
+app.listen(3000,function(){
+	console.log('server is listening at port 3000');
+});
+
+2. Make a database of vechicle aggregator which include all the detail of vechicle and 
+    which include information about day,date,time for which it is booked or occupied
+
+3.set up the database connection
+
+varMongoClient = require('mongodb').MongoClient, format = require('util').format;
+MongoClient.connect('mongodb://...', function (err, db)
+ {
+    if (err)
+ {
+        throw err;
+    } 
+else {
+        console.log("successfully connected to the database");
+    }
+    db.close();
+});
+
+4. Setup a route for app table
+app.route('/vechicle_table')
+.post(Table);
+
+
+
+=>FrontEnd
+
+1. fetching the data from backend on hit api(axios.post(address)).
+
+2. Filter the records using filter 
+const result = cars.filter(cars!=available);
+
+3. Will check from database according to date,time if available. 
+Display value of result variable obtained using filter.
+
+4. filter result will filter out available cars and display it using post.
